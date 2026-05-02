@@ -156,6 +156,15 @@
       min-height: 260px;
       overflow: hidden;
     }
+    .hero-visual h2 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .hero-visual p {
+      font-size: 0.9rem;
+      color: #c5ced8;
+      max-width: 320px;
+    }
     .tag {
       position: absolute;
       top: 18px;
@@ -169,13 +178,100 @@
       letter-spacing: 0.08em;
       color: #ffb347;
     }
-
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .mini-card {
+      background: rgba(11, 16, 20, 0.8);
+      border-radius: 14px;
+      border: 1px solid #1f2a33;
+      padding: 10px 12px;
+      font-size: 0.8rem;
+      color: #c5ced8;
+    }
+    .mini-card strong {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+      color: #ffb347;
+    }
+    
+    /* Section galerie photo */
+    .photo-gallery {
+      padding: 60px 8vw;
+      background: linear-gradient(180deg, #0b1014 0%, #111821 100%);
+      border-top: 1px solid #1f2a33;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 16/10;
+      border: 1px solid #1f2a33;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255, 179, 71, 0.15);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(11, 16, 20, 0.95), transparent);
+      padding: 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover .gallery-item-overlay {
+      transform: translateY(0);
+    }
+    .gallery-item-overlay h3 {
+      font-size: 1rem;
+      color: #ffb347;
+      margin-bottom: 4px;
+    }
+    .gallery-item-overlay p {
+      font-size: 0.85rem;
+      color: #c5ced8;
+    }
+    
+    section {
+      padding: 40px 8vw 60px;
+      border-top: 1px solid #1f2a33;
+      background: #0b1014;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #c5ced8;
+      max-width: 640px;
+      margin-bottom: 30px;
+    }
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
-
     .feature {
       background: #111821;
       border-radius: 16px;
@@ -183,60 +279,271 @@
       padding: 18px;
       transition: transform 0.3s, border-color 0.3s;
     }
-
-    section {
-      padding: 40px 8vw 60px;
-      border-top: 1px solid #1f2a33;
+    .feature:hover {
+      transform: translateY(-4px);
+      border-color: #2b3a46;
     }
-
+    .feature h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #ffb347;
+    }
+    .feature p {
+      font-size: 0.9rem;
+      color: #c5ced8;
+      line-height: 1.5;
+    }
     footer {
-      padding: 20px 8vw;
+      padding: 20px 8vw 30px;
       border-top: 1px solid #1f2a33;
       font-size: 0.85rem;
+      color: #8b949e;
       background: #05080b;
+    }
+    footer a {
+      color: #c5ced8;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #ffb347;
+    }
+    @media (max-width: 800px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 40px;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="logo">
-    <img src="data/logo.png">
-    <div class="logo-text">Orignal <span>Scan</span></div>
+    <img src="data/logo.png" alt="Logo Orignal Scan">
+    <div class="logo-text">
+      Orignal <span>Scan</span>
+    </div>
   </div>
+  <nav>
+    <a href="#galerie">Galerie</a>
+    <a href="#fonctionnalites">Fonctionnalités</a>
+    <a href="#pour-qui">Pour qui ?</a>
+    <a href="#telechargement">Téléchargement</a>
+  </nav>
 </header>
 
 <main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Orignal <span>Scan</span> – La technologie qui change votre chasse</h1>
+      <p>
+        Orignal Scan est une application conçue pour aider les chasseurs d’orignal à 
+	planifier leurs sorties, analyser leurs observations et cibler les secteurs les 
+	plus prometteurs, tout en facilitant le partage d’information au sein du groupe de chasse.      </p>
 
-<section id="pour-qui">
-  <h2 class="section-title">Pour qui est Orignal Scan ?</h2>
+      <div class="badges">
+        <div class="badge">AI intégrée</div>
+	<div class="badge">Cartes écoforestières</div>
+        <div class="badge">Géolocalisation</div>
+	<div class="badge">Données partagées</div>
+      </div>
 
-  <div class="features">
-    <article class="feature">
-      <h3>Chasseurs de la relève</h3>
-      <p>...</p>
-    </article>
+      <div class="cta-group">
+        <a href="#telechargement" class="btn-primary">
+          Télécharger l'application
+        </a>
+        <a href="#fonctionnalites" class="btn-secondary">
+          Découvrir les fonctionnalités
+        </a>
+      </div>
+    </div>
 
-    <article class="feature">
-      <h3>Chasseurs expérimentés</h3>
-      <p>...</p>
-    </article>
+    <div class="hero-visual">
+      <div class="tag">Nouveau</div>
 
-    <article class="feature">
-      <h3>Groupes de chasse</h3>
-      <p>...</p>
-    </article>
+      <h2>Optimisez votre chasse à l’orignal !</h2>
+      <p>
+        Marquez vos caméras, tracés et observations d'orignaux directement sur la carte.
+        Générez des parcours de chasse optimisé par un algorithme en prenant compte des cartes 
+	éco-forestière, des éléments physiques du terrain, du vent, etc. 
+      </p>
 
-    <article class="feature">
-      <h3>Sépaq ou pourvoiries</h3>
-      <p>...</p>
-    </article>
-  </div>
+      <div class="card-grid">
+        <div class="mini-card">
+          <strong>Points chauds</strong>
+          Grâce à cet algorithme, vous pouvez déterminer les emplacements les plus favorables à la présence 	d’orignaux.
+        </div>
+        <div class="mini-card">
+          <strong>Conditions terrain</strong>
+          Accédez aux prévisions météo, aux conditions de vent ainsi qu’aux heures de chasse, directement adaptées à 	votre localisation.
+        </div>
+        <div class="mini-card">
+          <strong>Parcours optimisé</strong>
+          Créez des parcours intelligents à l’aide d’un algorithme qui optimise vos déplacements selon différents 	critères. 
+        </div>
+        <div class="mini-card">
+          <strong>Historique</strong>
+          Gérez vos itinéraires et vos observations de manière simple et flexible.
+        </div>
+	<div class="mini-card">
+          <strong>Partage de groupe</strong>
+          Échangez vos positions, observations et tracés. Clavardez à même l'application! 
+        </div>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section id="galerie" class="photo-gallery">
+    <h2 class="section-title">Votre territoire, votre passion</h2>
+    <p class="section-subtitle">
+      Dans les forêts vivant le plus grand des cervidés, Orignal Scan vous accompagne dans tous vos expédition de chasse.
+    </p>
 
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="data/chasseurgps.jpeg" alt="Forêt automnale au bord d'un lac">
+        <div class="gallery-item-overlay">
+          <h3>Chasse à l'orignal 2.0</h3>
+          <p>L'outil parfait pour la chasse à l'orignal au Québec</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="data/bottescell.jpg" alt="Forêt dense avec arbres">
+        <div class="gallery-item-overlay">
+          <h3>En pleine forêt</h3>
+          <p>Naviguez sécuritairement sur votre territoire</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="data/chasseurcell.png" alt="Vue sur la nature et végétation">
+        <div class="gallery-item-overlay">
+          <h3>Peuplements forestiers</h3>
+          <p>Localisez les habitats préférentiels de l’orignal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnalites">
+    <h2 class="section-title">Fonctionnalités principales</h2>
+    <p class="section-subtitle">
+      Orignal Scan regroupe les outils essentiels pour préparer, suivre et analyser vos chasses à l'orignal,
+      sans vous perdre dans des menus compliqués.
+    </p>
+
+    <div class="features">
+      <article class="feature">
+        <h3>Cartes détaillées du territoire</h3>
+        <p>
+          Affichez votre position, ajoutez des marqueurs et visualisez les zones clés de votre secteur.
+          Idéal pour structurer vos plans de chasse et vos déplacements.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3>Journal d'observations</h3>
+        <p>
+          Enregistrez chaque observation et itinéraire en construisant votre propre base de données terrain. 
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3>Suivi des conditions</h3>
+        <p>
+          Associez météo, vent et période de la journée à vos observations pour mieux comprendre
+          les habitudes des orignaux sur votre territoire.
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3>Partage de groupe</h3>
+        <p>
+          Partagez vos données et localisation entre les membres du groupe. Clavardez à même l'application! 
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section id="pour-qui">
+    <h2 class="section-title">Pour qui est Orignal Scan ?</h2>
+    <p class="section-subtitle">
+      L’application s’adresse autant aux chasseurs de la relève qu’aux chasseurs expérimentés qui désirent apprendre grâce aux algorithmes, optimiser leurs stratégies et augmenter leur succès de chasse.
+    </p>
+
+ 	<div class="features">
+     <article class="feature">
+        <h3>Chasseurs de la relève</h3>
+        <p>
+        Orignal Scan vous permet d'évoluer rapidement en apprenant sur 	l'importance des vents, 
+		l'analyse des différents peuplements et autres facteurs influançant les décisions en temps de chasse. 
+        </p>
+      </article>
+
+	<div class="features">
+      <article class="feature">
+        <h3>Chasseurs expérimentés</h3>
+        <p>
+          Planifiez vos sorties, ciblez vos points chauds, sauvegardez vos observations et améliorez votre stratégie
+          saison après saison. 
+        </p>
+      </article>
+
+      <article class="feature">
+        <h3>Groupes de chasse</h3>
+        <p>
+          Partagez les informations clés au sein de votre groupe pour coordonner vos actions. Discutez également en temps réel avec votre groupe de chasse.
+        </p>
+      </article>
+
+		  <article class="feature">
+        <h3>Sépaq ou pourvoiries</h3>
+        <p>
+          Vous payez cher pour accéder à ces territoires : ne gaspillez pas votre temps en prospection. Gardez votre énergie pour la chasse.
+        </p>
+      </article>
+		
+    </div>
+  </section>
+
+  <section id="telechargement">
+    <h2 class="section-title">Télécharger Orignal Scan</h2>
+    <p class="section-subtitle">
+      Orignal Scan sera bientôt disponible sur les principales plateformes mobiles.
+      Revenez régulièrement ou visitez notre facebook.
+    </p>
+
+    <div class="cta-group">
+      <a href="#" class="btn-primary">Bientôt sur Android</a>
+      <a href="#" class="btn-secondary">Bientôt sur iOS</a>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div>
+    © <span id="year"></span> Orignal Scan – Tous droits réservés.
+    &nbsp;|&nbsp;
+    <a href="#mentions">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  // Affiche automatiquement l'année courante
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
