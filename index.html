@@ -5,152 +5,127 @@
   <title>Orignal Scan – Application de chasse à l'orignal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Orignal Scan est une application conçue pour les chasseurs d'orignaux : cartes, observations, notes et planification.">
-  
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b1014;
-      color: #f5f5f5;
+      background:#0b1014;
+      color:#f5f5f5;
     }
 
     header {
       background: linear-gradient(135deg, #1b2833, #243b4a);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #1f2a33;
+      padding:20px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid #1f2a33;
     }
 
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      text-transform: uppercase;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.4rem;
+      font-weight:700;
+      text-transform:uppercase;
     }
 
-    .logo img {
-      height: 80px;
-    }
+    .logo img { height:200px; }
 
-    .logo-text span {
-      color: #ffb347;
-    }
+    .logo-text span { color:#ffb347; }
 
     nav a {
-      color: #d0d7de;
-      text-decoration: none;
-      margin-left: 20px;
+      color:#d0d7de;
+      text-decoration:none;
+      margin-left:20px;
     }
 
-    nav a:hover {
-      color: #ffb347;
-    }
+    nav a:hover { color:#ffb347; }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 40px;
-      padding: 60px 8vw;
-      align-items: center;
+      display:grid;
+      grid-template-columns:1.3fr 1fr;
+      gap:40px;
+      padding:60px 8vw;
+      align-items:center;
+      position:relative;
     }
 
-    .hero-text h1 span {
-      color: #ffb347;
+    .hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:url('data/forest-with-trees-close-up.jpg') center/cover;
+      opacity:0.08;
     }
 
-    .badges {
-      margin: 20px 0;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .hero-text, .hero-visual { position:relative; z-index:1; }
+
+    .hero-text h1 span { color:#ffb347; }
+
+    .badges { margin:20px 0; display:flex; gap:10px; flex-wrap:wrap; }
 
     .badge {
-      border-radius: 999px;
-      border: 1px solid #2b3a46;
-      padding: 6px 14px;
-      font-size: 0.8rem;
+      border-radius:999px;
+      border:1px solid #2b3a46;
+      padding:6px 14px;
+      font-size:0.8rem;
     }
 
-    .cta-group {
-      display: flex;
-      gap: 12px;
-    }
+    .cta-group { display:flex; gap:12px; }
 
     .btn-primary {
-      background: #ffb347;
-      color: #1b2833;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
+      background:#ffb347;
+      color:#1b2833;
+      padding:10px 20px;
+      border-radius:999px;
+      text-decoration:none;
     }
 
     .btn-secondary {
-      border: 1px solid #2b3a46;
-      padding: 10px 20px;
-      border-radius: 999px;
-      text-decoration: none;
-      color: #fff;
+      border:1px solid #2b3a46;
+      padding:10px 20px;
+      border-radius:999px;
+      text-decoration:none;
+      color:#fff;
     }
 
     section {
-      padding: 50px 8vw;
-      border-top: 1px solid #1f2a33;
+      padding:50px 8vw;
+      border-top:1px solid #1f2a33;
     }
 
-    .section-title {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
+    .section-title { font-size:1.4rem; margin-bottom:10px; }
 
     .section-subtitle {
-      color: #c5ced8;
-      margin-bottom: 30px;
+      color:#c5ced8;
+      margin-bottom:30px;
     }
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:20px;
     }
 
     .feature {
-      background: #111821;
-      border-radius: 16px;
-      border: 1px solid #1f2a33;
-      padding: 18px;
-
-      /* ✅ amélioration visuelle */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .feature h3 {
-      color: #ffb347;
-      margin-bottom: 8px;
+      background:#111821;
+      border-radius:16px;
+      border:1px solid #1f2a33;
+      padding:18px;
     }
 
     footer {
-      padding: 20px;
-      text-align: center;
-      font-size: 0.8rem;
-      background: #05080b;
+      padding:20px;
+      text-align:center;
+      background:#05080b;
+      font-size:0.8rem;
     }
 
-    @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width:800px) {
+      .hero { grid-template-columns:1fr; }
     }
   </style>
 </head>
@@ -167,6 +142,7 @@
     <a href="#galerie">Galerie</a>
     <a href="#fonctionnalites">Fonctionnalités</a>
     <a href="#pour-qui">Pour qui ?</a>
+    <a href="#telechargement">Téléchargement</a>
   </nav>
 </header>
 
@@ -174,24 +150,28 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Orignal <span>Scan</span></h1>
-    <p>Optimisez votre chasse à l'orignal avec des outils intelligents.</p>
+    <h1>Orignal <span>Scan</span> – La technologie qui change votre chasse</h1>
+    <p>
+      Orignal Scan est une application conçue pour aider les chasseurs d’orignal à 
+      planifier leurs sorties, analyser leurs observations et cibler les secteurs les 
+      plus prometteurs.
+    </p>
 
     <div class="badges">
-      <div class="badge">AI</div>
-      <div class="badge">Cartes</div>
-      <div class="badge">GPS</div>
+      <div class="badge">AI intégrée</div>
+      <div class="badge">Cartes écoforestières</div>
+      <div class="badge">Géolocalisation</div>
     </div>
 
     <div class="cta-group">
       <a href="#" class="btn-primary">Télécharger</a>
-      <a href="#" class="btn-secondary">Voir plus</a>
+      <a href="#" class="btn-secondary">Fonctionnalités</a>
     </div>
   </div>
 </section>
 
 <section id="fonctionnalites">
-  <h2 class="section-title">Fonctionnalités</h2>
+  <h2 class="section-title">Fonctionnalités principales</h2>
 
   <div class="features">
     <article class="feature">
@@ -212,8 +192,12 @@
 </section>
 
 <section id="pour-qui">
-  <h2 class="section-title">Pour qui ?</h2>
+  <h2 class="section-title">Pour qui est Orignal Scan ?</h2>
+  <p class="section-subtitle">
+    L’application s’adresse autant aux chasseurs de la relève qu’aux chasseurs expérimentés.
+  </p>
 
+  <!-- ✅ CORRECTION ICI : plus de div imbriqué -->
   <div class="features">
     <article class="feature">
       <h3>Chasseurs de la relève</h3>
@@ -231,17 +215,26 @@
     </article>
 
     <article class="feature">
-      <h3>Sépaq / Pourvoiries</h3>
+      <h3>Sépaq ou pourvoiries</h3>
       <p>Maximisez votre temps.</p>
     </article>
   </div>
 </section>
 
+<section id="telechargement">
+  <h2 class="section-title">Téléchargement</h2>
+  <p class="section-subtitle">Bientôt disponible</p>
+</section>
+
 </main>
 
 <footer>
-  © 2026 Orignal Scan
+  © <span id="year"></span> Orignal Scan
 </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
