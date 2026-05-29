@@ -291,6 +291,32 @@
       border-top: 1px solid #1f2a33;
       background: #0b1014;
     }
+    .screen-thumb {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      cursor: default;
+      transition: transform 0.25s;
+    }
+    .screen-thumb:hover {
+      transform: translateY(-4px);
+    }
+    .screen-thumb img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #2b3a46;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .screen-thumb:hover img {
+      border-color: #ffb347;
+      box-shadow: 0 6px 20px rgba(255, 179, 71, 0.25);
+    }
+    .screen-thumb span {
+      font-size: 0.72rem;
+      color: #c5ced8;
+      text-align: center;
+    }
     .features-preview {
       display: flex;
       gap: 20px;
@@ -453,9 +479,23 @@
           Échangez vos positions, observations et tracés. Clavardez à même l'application! 
         </div>
       </div>
-      <div style="display:flex;gap:10px;margin-top:14px;justify-content:center;">
-        <img src="data/screenshot-affut.jpg" alt="Postes d'affût" style="width:90px;border-radius:12px;border:1px solid #2b3a46;">
-        <img src="data/screenshot-hotspots.jpg" alt="Points chauds" style="width:90px;border-radius:12px;border:1px solid #2b3a46;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;">
+        <div class="screen-thumb">
+          <img src="data/screenshot-affut.jpg" alt="Postes d'affût">
+          <span>🏕 Postes d'affût</span>
+        </div>
+        <div class="screen-thumb">
+          <img src="data/screenshot-hotspots.jpg" alt="Points chauds">
+          <span>🔥 Points chauds</span>
+        </div>
+        <div class="screen-thumb">
+          <img src="data/screenshot-salines.jpg" alt="Salines">
+          <span>🧂 Salines</span>
+        </div>
+        <div class="screen-thumb">
+          <img src="data/screenshot-parcours.jpg" alt="Parcours">
+          <span>🗺 Parcours</span>
+        </div>
       </div>
     </div>
   </section>
