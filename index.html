@@ -208,49 +208,82 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 16px;
       margin-top: 30px;
     }
     .gallery-item {
       border-radius: 16px;
       overflow: hidden;
       position: relative;
-      aspect-ratio: 16/10;
       border: 1px solid #1f2a33;
       transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .gallery-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(255, 179, 71, 0.15);
     }
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      min-height: 220px;
+    }
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255, 179, 71, 0.15);
     }
     .gallery-item-overlay {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       background: linear-gradient(to top, rgba(11, 16, 20, 0.95), transparent);
       padding: 20px;
       transform: translateY(100%);
       transition: transform 0.3s;
     }
-    .gallery-item:hover .gallery-item-overlay {
-      transform: translateY(0);
+    .gallery-item:hover .gallery-item-overlay { transform: translateY(0); }
+    .gallery-item-overlay h3 { font-size: 1rem; color: #ffb347; margin-bottom: 4px; }
+    .gallery-item-overlay p { font-size: 0.85rem; color: #c5ced8; }
+
+    /* Screenshots de l'app */
+    .screenshots {
+      padding: 60px 8vw;
+      background: #0b1014;
+      border-top: 1px solid #1f2a33;
+      overflow: hidden;
     }
-    .gallery-item-overlay h3 {
-      font-size: 1rem;
+    .screenshots-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      margin-top: 30px;
+      scrollbar-width: thin;
+      scrollbar-color: #ffb347 #1f2a33;
+    }
+    .screenshots-scroll::-webkit-scrollbar { height: 6px; }
+    .screenshots-scroll::-webkit-scrollbar-track { background: #1f2a33; border-radius: 3px; }
+    .screenshots-scroll::-webkit-scrollbar-thumb { background: #ffb347; border-radius: 3px; }
+    .screenshot-item {
+      flex: 0 0 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid #1f2a33;
+      background: #111821;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .screenshot-item:hover {
+      transform: translateY(-6px);
+      border-color: #ffb347;
+    }
+    .screenshot-item img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-label {
+      padding: 10px 12px;
+      font-size: 0.8rem;
       color: #ffb347;
-      margin-bottom: 4px;
-    }
-    .gallery-item-overlay p {
-      font-size: 0.85rem;
-      color: #c5ced8;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.04em;
     }
     
     section {
@@ -324,6 +357,7 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+      .gallery-item img { min-height: 180px; }
     }
   </style>
 </head>
@@ -418,27 +452,52 @@
 
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="data/chasseurgps.jpeg" alt="Forêt automnale au bord d'un lac">
+        <img src="data/orignal-cam.jpg" alt="Bull orignal capturé sur caméra de surveillance">
         <div class="gallery-item-overlay">
-          <h3>Chasse à l'orignal 2.0</h3>
-          <p>L'outil parfait pour la chasse à l'orignal au Québec</p>
+          <h3>Là où l’orignal passe, OrignalScan le sait</h3>
+          <p>Données écoforestières officielles du MRNF pour cibler les meilleurs habitats</p>
         </div>
       </div>
-
       <div class="gallery-item">
-        <img src="data/bottescell.jpg" alt="Forêt dense avec arbres">
+        <img src="data/screenshot-hotspots.png" alt="Points chauds IA sur la carte">
         <div class="gallery-item-overlay">
-          <h3>En pleine forêt</h3>
-          <p>Naviguez sécuritairement sur votre territoire</p>
+          <h3>Points chauds IA</h3>
+          <p>Algorithme qui détecte les meilleurs habitats</p>
         </div>
       </div>
-
       <div class="gallery-item">
-        <img src="data/chasseurcell.png" alt="Vue sur la nature et végétation">
+        <img src="data/screenshot-affut.png" alt="Postes d’affût sur la carte">
         <div class="gallery-item-overlay">
-          <h3>Peuplements forestiers</h3>
-          <p>Localisez les habitats préférentiels de l’orignal</p>
+          <h3>Postes d’affût</h3>
+          <p>Corridors naturels où l’orignal est forcé de passer</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2 class="section-title">L’app en action</h2>
+    <p class="section-subtitle">Toutes les données dont tu as besoin, directement sur ta carte satellite.</p>
+    <div class="screenshots-scroll">
+      <div class="screenshot-item">
+        <img src="data/screenshot-affut.png" alt="Postes d’affût">
+        <div class="screenshot-label">🏕 Postes d’affût</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="data/screenshot-salines.png" alt="Salines">
+        <div class="screenshot-label">🧂 Salines</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="data/screenshot-parcours.png" alt="Parcours optimisé">
+        <div class="screenshot-label">🗺 Parcours optimisé</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="data/screenshot-hotspots.png" alt="Points chauds">
+        <div class="screenshot-label">🔥 Points chauds</div>
+      </div>
+      <div class="screenshot-item">
+        <img src="data/screenshot-menu.png" alt="Menu principal">
+        <div class="screenshot-label">⚡ Menu principal</div>
       </div>
     </div>
   </section>
