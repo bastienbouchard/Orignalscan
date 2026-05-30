@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Orignal Scan est une application conçue pour les chasseurs d'orignaux : cartes, observations, notes et planification.">
   <link rel="icon" type="image/png" href="data/logo.png">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -31,26 +31,33 @@
 
 <main>
   <section class="screenshots-top">
-    <p class="screenshots-label">Découvrez les fonctionnalités IA — cliquez pour en savoir plus</p>
     <div class="screenshots-row">
-      <a href="fonctionnalites.html#affut" class="screen-thumb">
+      <button class="screen-thumb" onclick="openModal('affut')">
         <img src="data/screenshot-affut.jpg" alt="Postes d'affût">
         <span>🏕 Postes d'affût</span>
-      </a>
-      <a href="fonctionnalites.html#hotspots" class="screen-thumb">
+      </button>
+      <button class="screen-thumb" onclick="openModal('hotspots')">
         <img src="data/screenshot-hotspots.jpg" alt="Points chauds">
         <span>🔥 Points chauds</span>
-      </a>
-      <a href="fonctionnalites.html#salines" class="screen-thumb">
+      </button>
+      <button class="screen-thumb" onclick="openModal('salines')">
         <img src="data/screenshot-salines.jpg" alt="Salines">
         <span>🧂 Salines</span>
-      </a>
-      <a href="fonctionnalites.html#parcours" class="screen-thumb">
+      </button>
+      <button class="screen-thumb" onclick="openModal('parcours')">
         <img src="data/screenshot-parcours.jpg" alt="Parcours">
         <span>🗺 Parcours</span>
-      </a>
+      </button>
     </div>
   </section>
+
+  <div class="modal-overlay" id="modal" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
 
   <section class="hero">
     <div class="hero-text">
@@ -117,6 +124,35 @@
   const nav = document.getElementById('nav');
   hamburger.addEventListener('click', () => nav.classList.toggle('open'));
   document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+
+  const modals = {
+    affut: {
+      title: '🏕 Postes d\'affût et salines',
+      desc: 'Cet algorithme analyse les données écoforestières et du terrain afin de dénicher les meilleurs endroits pour y installer un poste d\'affût ou une saline. Maximisez vos chances d\'observation sans perdre de temps en prospection.'
+    },
+    hotspots: {
+      title: '🔥 Points chauds',
+      desc: 'Grâce à cet algorithme, vous pouvez déterminer les emplacements les plus favorables à la présence d\'orignaux sur votre territoire. Les zones sont calculées à partir des données écoforestières officielles du MRNF.'
+    },
+    salines: {
+      title: '🧂 Salines',
+      desc: 'Identifiez les zones propices à l\'installation de salines grâce à l\'analyse combinée du terrain et des données écoforestières. Positionnez vos salines là où l\'orignal est le plus susceptible de passer.'
+    },
+    parcours: {
+      title: '🗺 Parcours optimisé',
+      desc: 'Créez des parcours intelligents à l\'aide d\'un algorithme qui optimise vos déplacements selon différents critères afin de rentrer dans le meilleur habitat pour l\'orignal en temps de chasse.'
+    }
+  };
+
+  function openModal(key) {
+    document.getElementById('modal-title').textContent = modals[key].title;
+    document.getElementById('modal-desc').textContent = modals[key].desc;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
 </body>
 </html>
