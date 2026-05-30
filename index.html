@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Orignal Scan est une application conçue pour les chasseurs d'orignaux : cartes, observations, notes et planification.">
   <link rel="icon" type="image/png" href="data/logo.png">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
 
 <main>
   <section class="screenshots-top">
+    <p class="screenshots-label">L'IA améliore tes chances de récolte</p>
     <div class="screenshots-row">
       <button class="screen-thumb" onclick="openModal('affut')">
         <img src="data/screenshot-affut.jpg" alt="Postes d'affût">
@@ -61,41 +62,19 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Orignal <span>Scan</span> – L'IA au service de la chasse à l'orignal</h1>
       <p>
         Localisez les meilleurs habitats à l'orignal grâce à l'intelligence artificielle — postes d'affût, salines et points chauds calculés automatiquement à partir des données écoforestières officielles du MRNF et des facteurs du terrain.
       </p>
-      <div class="badges">
-        <div class="badge">AI intégrée</div>
-        <div class="badge">Cartes écoforestières</div>
-        <div class="badge">Géolocalisation</div>
-        <div class="badge">Données partagées</div>
-      </div>
       <div class="cta-group">
         <a href="telechargement.html" class="btn-primary">Télécharger l'application</a>
-        <a href="fonctionnalites.html" class="btn-secondary">Découvrir les fonctionnalités</a>
       </div>
     </div>
 
     <div class="hero-visual">
-      <div class="tag">Nouveau</div>
-      <h2>L'IA améliore tes chances de récolte</h2>
       <div class="card-grid">
-        <div class="mini-card">
-          <strong>Points chauds</strong>
-          Grâce à cet algorithme, vous pouvez déterminer les emplacements les plus favorables à la présence d'orignaux.
-        </div>
         <div class="mini-card">
           <strong>Conditions terrain</strong>
           Accédez aux prévisions météo, aux conditions de vent ainsi qu'aux heures de chasse, directement adaptées à votre localisation.
-        </div>
-        <div class="mini-card">
-          <strong>Parcours optimisé</strong>
-          Créez des parcours intelligents à l'aide d'un algorithme qui optimise vos déplacements selon différents critères.
-        </div>
-        <div class="mini-card">
-          <strong>Postes d'affût et salines</strong>
-          Cet algorithme analyse les données écoforestières et du terrain afin de dénicher les meilleurs emplacements.
         </div>
         <div class="mini-card">
           <strong>Historique</strong>
@@ -127,7 +106,7 @@
 
   const modals = {
     affut: {
-      title: '🏕 Postes d\'affût et salines',
+      title: '🏕 Postes d\'affût',
       desc: 'Cet algorithme analyse les données écoforestières et du terrain afin de dénicher les meilleurs endroits pour y installer un poste d\'affût ou une saline. Maximisez vos chances d\'observation sans perdre de temps en prospection.'
     },
     hotspots: {
