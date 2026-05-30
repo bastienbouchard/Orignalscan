@@ -32,7 +32,14 @@ header {
   text-decoration: none;
 }
 .logo img { height: 40px; width: auto; }
-.logo-text span { color: #ffb347; }
+.logo-word {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5f5f5;
+}
+.logo-scan { color: #ffb347; }
 nav a {
   color: #d0d7de;
   text-decoration: none;
