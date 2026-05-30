@@ -84,9 +84,10 @@ nav a.active { color: #ffb347; font-weight: 600; }
 }
 .screenshots-row {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
 }
 .screenshots-row .screen-thumb {
   background: none;
@@ -97,10 +98,11 @@ nav a.active { color: #ffb347; font-weight: 600; }
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  width: 90px;
+  flex: 1;
+  max-width: 90px;
 }
 .screenshots-row .screen-thumb img {
-  width: 90px;
+  width: 100%;
   border-radius: 12px;
   border: 2px solid #1f2a33;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
