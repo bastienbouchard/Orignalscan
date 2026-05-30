@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Téléchargement – Orignal Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="data/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="data/logo.png" alt="Logo Orignal Scan">
+    <div class="logo-text">Orignal <span>Scan</span></div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="nav">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="galerie.html" class="nav-link">Galerie</a>
+    <a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
+    <a href="telechargement.html" class="nav-link active">Téléchargement</a>
+    <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
+  </nav>
+</header>
+
+<main>
+  <section style="border-top:none;">
+    <h2 class="section-title">Télécharger Orignal Scan</h2>
+    <p class="section-subtitle">
+      Orignal Scan sera bientôt disponible sur les principales plateformes mobiles.
+      Revenez régulièrement ou visitez notre Facebook.
+    </p>
+    <div class="cta-group">
+      <a href="#" class="btn-primary">Bientôt sur Android</a>
+      <a href="#" class="btn-secondary">Bientôt sur iOS</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    © <span id="year"></span> Orignal Scan – Tous droits réservés.
+    &nbsp;|&nbsp;
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fonctionnalités – Orignal Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="data/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="data/logo.png" alt="Logo Orignal Scan">
+    <div class="logo-text">Orignal <span>Scan</span></div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="nav">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="galerie.html" class="nav-link">Galerie</a>
+    <a href="fonctionnalites.html" class="nav-link active">Fonctionnalités</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
+    <a href="telechargement.html" class="nav-link">Téléchargement</a>
+    <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
+  </nav>
+</header>
+
+<main>
+  <section style="border-top:none;">
+    <h2 class="section-title">Fonctionnalités principales</h2>
+    <p class="section-subtitle">
+      Tout ce qu'il te faut pour chasser smarter — pas juste plus fort.
+    </p>
+    <div class="features">
+      <article class="feature">
+        <h3>🗺 Carte écoforestière</h3>
+        <p>Visualise les peuplements, l'âge des forêts et le drainage directement sur la carte satellite. Sais exactement où l'orignal mange, dort et se déplace.</p>
+      </article>
+      <article class="feature">
+        <h3>📍 Observations terrain</h3>
+        <p>Marque tes pistes, caméras et contacts sur la carte. Construis une base de données personnelle d'année en année.</p>
+      </article>
+      <article class="feature">
+        <h3>🌬 Météo & vent en temps réel</h3>
+        <p>Consulte les conditions météo, la direction du vent et les heures d'activité optimales directement dans l'app.</p>
+      </article>
+      <article class="feature">
+        <h3>👥 Chasse en groupe</h3>
+        <p>Vois les positions de ton équipe en direct, échange des messages, images et partage tes observations et tracés — tout dans la même app.</p>
+      </article>
+      <article class="feature">
+        <h3>📐 Terres privées</h3>
+        <p>Localisation des terres privées. Cliquez sur votre lot ou terrain pour télécharger les peuplements forestiers.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    © <span id="year"></span> Orignal Scan – Tous droits réservés.
+    &nbsp;|&nbsp;
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>

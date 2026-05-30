@@ -6,465 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Orignal Scan est une application conçue pour les chasseurs d'orignaux : cartes, observations, notes et planification.">
   <link rel="icon" type="image/png" href="data/logo.png">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0b1014;
-      color: #f5f5f5;
-    }
-    header {
-      background: linear-gradient(135deg, #1b2833, #243b4a);
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #1f2a33;
-      position: relative;
-      z-index: 10;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .logo img {
-      height: 44px;
-      width: auto;
-    }
-    .logo-text span {
-      color: #ffb347;
-    }
-    nav a {
-      color: #d0d7de;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: #ffb347;
-    }
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 40px;
-      padding: 60px 8vw;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('data/forest-with-trees-close-up.jpg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.08;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .hero-text,
-    .hero-visual {
-      position: relative;
-      z-index: 1;
-    }
-    .hero-text h1 {
-      font-size: clamp(2.2rem, 4vw, 3rem);
-      margin-bottom: 10px;
-    }
-    .hero-text h1 span {
-      color: #ffb347;
-    }
-    .hero-text p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #c5ced8;
-      max-width: 540px;
-    }
-    .badges {
-      margin: 20px 0 30px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .badge {
-      border-radius: 999px;
-      border: 1px solid #2b3a46;
-      padding: 6px 14px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #c5ced8;
-      background: rgba(11, 16, 20, 0.7);
-    }
-    .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .btn-primary,
-    .btn-secondary {
-      border-radius: 999px;
-      padding: 10px 22px;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-    }
-    .btn-primary {
-      background: #ffb347;
-      color: #1b2833;
-      font-weight: 600;
-    }
-    .btn-primary:hover {
-      background: #ff9f1c;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 179, 71, 0.3);
-    }
-    .btn-secondary {
-      background: transparent;
-      color: #f5f5f5;
-      border: 1px solid #2b3a46;
-    }
-    .btn-secondary:hover {
-      border-color: #ffb347;
-      color: #ffb347;
-    }
-    .hero-visual {
-      background: radial-gradient(circle at top, #243b4a 0, #0b1014 55%);
-      border-radius: 24px;
-      border: 1px solid #1f2a33;
-      padding: 24px;
-      position: relative;
-      min-height: 260px;
-      overflow: hidden;
-    }
-    .hero-visual h2 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-    .hero-visual p {
-      font-size: 0.9rem;
-      color: #c5ced8;
-      max-width: 320px;
-    }
-    .tag {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(11, 16, 20, 0.8);
-      border: 1px solid #2b3a46;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #ffb347;
-    }
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .mini-card {
-      background: rgba(11, 16, 20, 0.8);
-      border-radius: 14px;
-      border: 1px solid #1f2a33;
-      padding: 10px 12px;
-      font-size: 0.8rem;
-      color: #c5ced8;
-    }
-    .mini-card strong {
-      display: block;
-      font-size: 0.8rem;
-      margin-bottom: 4px;
-      color: #ffb347;
-    }
-    
-    /* Section galerie photo */
-    .photo-gallery {
-      padding: 60px 8vw;
-      background: linear-gradient(180deg, #0b1014 0%, #111821 100%);
-      border-top: 1px solid #1f2a33;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .gallery-item {
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      border: 1px solid #1f2a33;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      min-height: 220px;
-    }
-    .gallery-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(255, 179, 71, 0.15);
-    }
-    .gallery-item-overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(to top, rgba(11, 16, 20, 0.95), transparent);
-      padding: 20px;
-      transform: translateY(100%);
-      transition: transform 0.3s;
-    }
-    .gallery-item:hover .gallery-item-overlay { transform: translateY(0); }
-    .gallery-item-overlay h3 { font-size: 1rem; color: #ffb347; margin-bottom: 4px; }
-    .gallery-item-overlay p { font-size: 0.85rem; color: #c5ced8; }
-
-    /* Screenshots de l'app */
-    .screenshots {
-      padding: 60px 8vw;
-      background: #0b1014;
-      border-top: 1px solid #1f2a33;
-      overflow: hidden;
-    }
-    .screenshots-scroll {
-      display: flex;
-      gap: 20px;
-      overflow-x: auto;
-      padding-bottom: 16px;
-      margin-top: 30px;
-      scrollbar-width: thin;
-      scrollbar-color: #ffb347 #1f2a33;
-    }
-    .screenshots-scroll::-webkit-scrollbar { height: 6px; }
-    .screenshots-scroll::-webkit-scrollbar-track { background: #1f2a33; border-radius: 3px; }
-    .screenshots-scroll::-webkit-scrollbar-thumb { background: #ffb347; border-radius: 3px; }
-    .screenshot-item {
-      flex: 0 0 220px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 2px solid #1f2a33;
-      background: #111821;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .screenshot-item:hover {
-      transform: translateY(-6px);
-      border-color: #ffb347;
-    }
-    .screenshot-item img {
-      width: 100%;
-      display: block;
-    }
-    .screenshot-label {
-      padding: 10px 12px;
-      font-size: 0.8rem;
-      color: #ffb347;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: 0.04em;
-    }
-    
-    section {
-      padding: 40px 8vw 60px;
-      border-top: 1px solid #1f2a33;
-      background: #0b1014;
-    }
-    .screen-thumb {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      cursor: default;
-      transition: transform 0.25s;
-    }
-    .screen-thumb:hover {
-      transform: translateY(-4px);
-    }
-    .screen-thumb img {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid #2b3a46;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .screen-thumb:hover img {
-      border-color: #ffb347;
-      box-shadow: 0 6px 20px rgba(255, 179, 71, 0.25);
-    }
-    .screen-thumb span {
-      font-size: 0.65rem;
-      color: #c5ced8;
-      text-align: center;
-    }
-    .features-preview {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-bottom: 36px;
-    }
-    .features-preview img {
-      width: 150px;
-      border-radius: 18px;
-      border: 2px solid #1f2a33;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    .section-title {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: #c5ced8;
-      max-width: 640px;
-      margin-bottom: 30px;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .feature {
-      background: #111821;
-      border-radius: 16px;
-      border: 1px solid #1f2a33;
-      padding: 18px;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      border-color: #2b3a46;
-    }
-    .feature h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: #ffb347;
-    }
-    .feature p {
-      font-size: 0.9rem;
-      color: #c5ced8;
-      line-height: 1.5;
-    }
-    footer {
-      padding: 20px 8vw 30px;
-      border-top: 1px solid #1f2a33;
-      font-size: 0.85rem;
-      color: #8b949e;
-      background: #05080b;
-    }
-    footer a {
-      color: #c5ced8;
-      text-decoration: none;
-    }
-    footer a:hover {
-      color: #ffb347;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 6px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #f5f5f5;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    @media (max-width: 800px) {
-      header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px 20px;
-        gap: 0;
-      }
-      .hamburger {
-        display: flex;
-      }
-      nav {
-        display: none;
-        position: absolute;
-        top: 76px;
-        left: 0;
-        right: 0;
-        background: #1b2833;
-        flex-direction: column;
-        padding: 16px 20px;
-        gap: 4px;
-        border-bottom: 1px solid #1f2a33;
-        z-index: 100;
-      }
-      nav.open {
-        display: flex;
-      }
-      nav a {
-        margin-left: 0;
-        padding: 10px 0;
-        font-size: 1rem;
-        border-bottom: 1px solid #ffffff10;
-      }
-      nav a:last-child {
-        border-bottom: none;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 40px;
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-      .gallery-item img { min-height: 180px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <div class="logo">
+  <a href="index.html" class="logo">
     <img src="data/logo.png" alt="Logo Orignal Scan">
-    <div class="logo-text">
-      Orignal <span>Scan</span>
-    </div>
-  </div>
+    <div class="logo-text">Orignal <span>Scan</span></div>
+  </a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
   <nav id="nav">
-    <a href="#galerie" class="nav-link">Galerie</a>
-    <a href="#fonctionnalites" class="nav-link">Fonctionnalités</a>
-    <a href="#pour-qui" class="nav-link">Pour qui ?</a>
-    <a href="#telechargement" class="nav-link">Téléchargement</a>
+    <a href="index.html" class="nav-link active">Accueil</a>
+    <a href="galerie.html" class="nav-link">Galerie</a>
+    <a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
+    <a href="telechargement.html" class="nav-link">Téléchargement</a>
     <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
   </nav>
 </header>
@@ -472,55 +31,47 @@
 <main>
   <section class="hero">
     <div class="hero-text">
-      <h1>Orignal <span>Scan</span> – L’IA au service de la chasse à l’orignal</h1>
+      <h1>Orignal <span>Scan</span> – L'IA au service de la chasse à l'orignal</h1>
       <p>
-        Localisez les meilleurs habitats à l’orignal grâce à l’intelligence artificielle — postes d’affût, salines et points chauds calculés automatiquement à partir des données écoforestières officielles du MRNF et des facteurs du terrain.
+        Localisez les meilleurs habitats à l'orignal grâce à l'intelligence artificielle — postes d'affût, salines et points chauds calculés automatiquement à partir des données écoforestières officielles du MRNF et des facteurs du terrain.
       </p>
-
       <div class="badges">
         <div class="badge">AI intégrée</div>
-	<div class="badge">Cartes écoforestières</div>
+        <div class="badge">Cartes écoforestières</div>
         <div class="badge">Géolocalisation</div>
-	<div class="badge">Données partagées</div>
+        <div class="badge">Données partagées</div>
       </div>
-
       <div class="cta-group">
-        <a href="#telechargement" class="btn-primary">
-          Télécharger l'application
-        </a>
-        <a href="#fonctionnalites" class="btn-secondary">
-          Découvrir les fonctionnalités
-        </a>
+        <a href="telechargement.html" class="btn-primary">Télécharger l'application</a>
+        <a href="fonctionnalites.html" class="btn-secondary">Découvrir les fonctionnalités</a>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="tag">Nouveau</div>
-
-      <h2>L’IA améliore tes chances de récolte</h2>
-
+      <h2>L'IA améliore tes chances de récolte</h2>
       <div class="card-grid">
         <div class="mini-card">
           <strong>Points chauds</strong>
-          Grâce à cet algorithme, vous pouvez déterminer les emplacements les plus favorables à la présence 	d’orignaux.
+          Grâce à cet algorithme, vous pouvez déterminer les emplacements les plus favorables à la présence d'orignaux.
         </div>
         <div class="mini-card">
           <strong>Conditions terrain</strong>
-          Accédez aux prévisions météo, aux conditions de vent ainsi qu’aux heures de chasse, directement adaptées à 	votre localisation.
+          Accédez aux prévisions météo, aux conditions de vent ainsi qu'aux heures de chasse, directement adaptées à votre localisation.
         </div>
         <div class="mini-card">
           <strong>Parcours optimisé</strong>
-          Créez des parcours intelligents à l’aide d’un algorithme qui optimise vos déplacements selon différents critères afin de rentrer dans le meilleur habitat pour l’orignal en temps de chasse.
+          Créez des parcours intelligents à l'aide d'un algorithme qui optimise vos déplacements selon différents critères afin de rentrer dans le meilleur habitat pour l'orignal en temps de chasse.
         </div>
         <div class="mini-card">
-          <strong>Postes d’affût et salines</strong>
-          Cet algorithme analyse les données écoforestières et du terrain afin de dénicher les meilleurs endroits pour y installer un poste d’affût ou une saline.
+          <strong>Postes d'affût et salines</strong>
+          Cet algorithme analyse les données écoforestières et du terrain afin de dénicher les meilleurs endroits pour y installer un poste d'affût ou une saline.
         </div>
         <div class="mini-card">
           <strong>Historique</strong>
           Gérez vos itinéraires et vos observations de manière simple et flexible.
         </div>
-	<div class="mini-card">
+        <div class="mini-card">
           <strong>Partage de groupe</strong>
           Échangez vos positions, observations et tracés. Clavardez à même l'application et échangez vos photos!
         </div>
@@ -545,164 +96,22 @@
       </div>
     </div>
   </section>
-
-  <section id="galerie" class="photo-gallery">
-    <h2 class="section-title">Votre territoire, votre passion</h2>
-    <p class="section-subtitle">
-      L’outil de chasse à l’orignal le plus avancé au Québec — sur le terrain et dans l’app.
-    </p>
-
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="data/chasseurgps.jpeg" alt="Chasseur en forêt avec GPS">
-        <div class="gallery-item-overlay">
-          <h3>Chasse à l’orignal 2.0</h3>
-          <p>L’outil parfait pour la chasse à l’orignal au Québec</p>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="data/bottescell.jpg" alt="Forêt dense avec arbres">
-        <div class="gallery-item-overlay">
-          <h3>En pleine forêt</h3>
-          <p>Naviguez sécuritairement sur votre territoire</p>
-        </div>
-      </div>
-      <div class="gallery-item">
-        <img src="data/chasseurcell.png" alt="Vue sur la nature et végétation">
-        <div class="gallery-item-overlay">
-          <h3>Peuplements forestiers</h3>
-          <p>Localisez les habitats préférentiels de l’orignal</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="screenshots" style="display:none">
-  </section>
-
-  <section id="fonctionnalites">
-    <h2 class="section-title">Fonctionnalités principales</h2>
-    <p class="section-subtitle">
-      Tout ce qu'il te faut pour chasser smarter — pas juste plus fort.
-    </p>
-
-    <div class="features">
-      <article class="feature">
-        <h3>🗺 Carte écoforestière</h3>
-        <p>
-          Visualise les peuplements, l'âge des forêts et le drainage directement sur la carte satellite. Sais exactement où l'orignal mange, dort et se déplace.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>📍 Observations terrain</h3>
-        <p>
-          Marque tes pistes, caméras et contacts sur la carte. Construis une base de données personnelle d'année en année.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>🌬 Météo & vent en temps réel</h3>
-        <p>
-          Consulte les conditions météo, la direction du vent et les heures d'activité optimales directement dans l'app.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>👥 Chasse en groupe</h3>
-        <p>
-          Vois les positions de ton équipe en direct, échange des messages, images et partage tes observations et tracés — tout dans la même app.
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>📐 Terres privées</h3>
-        <p>
-          Localisation des terres privées. Cliquez sur votre lot ou terrain pour télécharger les peuplements forestiers.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <section id="pour-qui">
-    <h2 class="section-title">Pour qui est Orignal Scan ?</h2>
-    <p class="section-subtitle">
-      L’application s’adresse autant aux chasseurs de la relève qu’aux chasseurs expérimentés qui désirent apprendre grâce aux algorithmes, optimiser leurs stratégies et augmenter leur succès de chasse.
-    </p>
-
- 	<div class="features">
-     <article class="feature">
-        <h3>Chasseurs de la relève</h3>
-        <p>
-        Orignal Scan vous permet d'évoluer rapidement en apprenant sur 	l'importance des vents, 
-		l'analyse des différents peuplements et autres facteurs influançant les décisions en temps de chasse. 
-        </p>
-      </article>
-
-	
-      <article class="feature">
-        <h3>Chasseurs expérimentés</h3>
-        <p>
-          Planifiez vos sorties, ciblez vos points chauds, sauvegardez vos observations et améliorez votre stratégie
-          saison après saison. 
-        </p>
-      </article>
-
-      <article class="feature">
-        <h3>Groupes de chasse</h3>
-        <p>
-          Partagez les informations clés au sein de votre groupe pour coordonner vos actions. Discutez également en temps réel avec votre groupe de chasse.
-        </p>
-      </article>
-
-		  <article class="feature">
-        <h3>Sépaq ou pourvoiries</h3>
-        <p>
-          Vous payez cher pour accéder à ces territoires : ne gaspillez pas votre temps en prospection. Gardez votre énergie pour la chasse.
-        </p>
-      </article>
-		
-    </div>
-  </section>
-
-  <section id="telechargement">
-    <h2 class="section-title">Télécharger Orignal Scan</h2>
-    <p class="section-subtitle">
-      Orignal Scan sera bientôt disponible sur les principales plateformes mobiles.
-      Revenez régulièrement ou visitez notre facebook.
-    </p>
-
-    <div class="cta-group">
-      <a href="#" class="btn-primary">Bientôt sur Android</a>
-      <a href="#" class="btn-secondary">Bientôt sur iOS</a>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div>
     © <span id="year"></span> Orignal Scan – Tous droits réservés.
     &nbsp;|&nbsp;
-    <a href="#mentions">Mentions légales</a>
+    <a href="#">Mentions légales</a>
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
-
-  hamburger.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-    });
-  });
+  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
 </script>
-
 </body>
 </html>

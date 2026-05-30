@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Galerie – Orignal Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="data/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="data/logo.png" alt="Logo Orignal Scan">
+    <div class="logo-text">Orignal <span>Scan</span></div>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="nav">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="galerie.html" class="nav-link active">Galerie</a>
+    <a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
+    <a href="telechargement.html" class="nav-link">Téléchargement</a>
+    <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
+  </nav>
+</header>
+
+<main>
+  <section class="photo-gallery" style="border-top:none;">
+    <h2 class="section-title">Votre territoire, votre passion</h2>
+    <p class="section-subtitle">
+      L'outil de chasse à l'orignal le plus avancé au Québec — sur le terrain et dans l'app.
+    </p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="data/chasseurgps.jpeg" alt="Chasseur en forêt avec GPS">
+        <div class="gallery-item-overlay">
+          <h3>Chasse à l'orignal 2.0</h3>
+          <p>L'outil parfait pour la chasse à l'orignal au Québec</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="data/bottescell.jpg" alt="Chasseur en forêt avec l'app">
+        <div class="gallery-item-overlay">
+          <h3>En pleine forêt</h3>
+          <p>Naviguez sécuritairement sur votre territoire</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="data/chasseurcell.png" alt="Vue sur la nature et végétation">
+        <div class="gallery-item-overlay">
+          <h3>Peuplements forestiers</h3>
+          <p>Localisez les habitats préférentiels de l'orignal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    © <span id="year"></span> Orignal Scan – Tous droits réservés.
+    &nbsp;|&nbsp;
+    <a href="#">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>
