@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mentions légales & Politique de confidentialité – Orignal Scan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="data/logo.png">
+  <link rel="apple-touch-icon" href="data/logo.png">
+  <link rel="stylesheet" href="style.css?v=15">
+</head>
+<body>
+
+<header>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="index.html" class="logo">
+    <span class="logo-word">Orignal</span>
+    <img src="data/logo.png" alt="Logo Orignal Scan">
+    <span class="logo-word logo-scan">Scan</span>
+  </a>
+  <div class="header-spacer"></div>
+  <nav id="nav">
+    <a href="index.html" class="nav-link">Accueil</a>
+    <a href="galerie.html" class="nav-link">Galerie</a>
+    <a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
+    <a href="telechargement.html" class="nav-link">Téléchargement</a>
+    <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2 class="section-title">Mentions légales &amp; Politique de confidentialité</h2>
+
+    <div style="max-width: 760px; margin: 0 auto; line-height: 1.8; color: #ccc;">
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Éditeur</h3>
+      <p>Orignal Scan est une application mobile développée et exploitée par Bastien Bouchard, Québec, Canada.<br>
+      Contact : <a href="mailto:bastienbouchard@gmail.com" style="color:#7cbb4a;">bastienbouchard@gmail.com</a></p>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Données collectées</h3>
+      <p>L'application collecte les données suivantes :</p>
+      <ul style="margin: 12px 0 12px 24px;">
+        <li>Adresse courriel et mot de passe (authentification)</li>
+        <li>Localisation GPS (fonctionnalités cartographiques et partage de groupe)</li>
+        <li>Observations terrain saisies par l'utilisateur (notes, photos, coordonnées)</li>
+        <li>Position en temps réel (uniquement si la fonctionnalité Groupe est activée)</li>
+      </ul>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Utilisation des données</h3>
+      <p>Les données sont utilisées uniquement pour le fonctionnement de l'application : authentification, affichage des observations sur la carte et partage avec les membres du groupe choisi par l'utilisateur. Aucune donnée n'est vendue à des tiers.</p>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Stockage et sécurité</h3>
+      <p>Les données sont stockées sur Google Firebase (Firestore) avec chiffrement en transit. L'utilisateur peut supprimer son compte et ses données en contactant l'éditeur.</p>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Services tiers</h3>
+      <ul style="margin: 12px 0 12px 24px;">
+        <li>Google Firebase — authentification et base de données</li>
+        <li>OpenStreetMap — fond de carte</li>
+        <li>Open-Meteo — données météorologiques</li>
+        <li>Stripe — paiement sécurisé (aucune donnée bancaire stockée par l'app)</li>
+        <li>Données écoforestières MRNF — Québec</li>
+      </ul>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Droits de l'utilisateur</h3>
+      <p>Conformément aux lois applicables, vous pouvez demander l'accès, la correction ou la suppression de vos données personnelles en écrivant à <a href="mailto:bastienbouchard@gmail.com" style="color:#7cbb4a;">bastienbouchard@gmail.com</a>.</p>
+
+      <h3 style="color: #fff; margin: 32px 0 12px;">Modifications</h3>
+      <p>Cette politique peut être mise à jour. La version en vigueur est toujours disponible à cette adresse.</p>
+
+      <p style="margin-top: 40px; color: #666; font-size: 13px;">Dernière mise à jour : mai 2025</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    © <span id="year"></span> Orignal Scan – Tous droits réservés.
+    &nbsp;|&nbsp;
+    <a href="mentions-legales.html">Mentions légales</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav');
+  hamburger.addEventListener('click', () => nav.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+</script>
+</body>
+</html>
