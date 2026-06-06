@@ -123,6 +123,8 @@ a { text-decoration: none; }
   letter-spacing: -0.01em;
   hyphens: none;
   word-break: keep-all;
+  text-align: center;
+  width: 100%;
 }
 .hero-accent {
   color: #ffb347;
