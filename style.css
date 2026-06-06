@@ -72,7 +72,7 @@ a { text-decoration: none; }
 
 /* HEADER */
 header {
-  background: rgba(10, 18, 24, 0.85);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(8px);
   padding: 16px 20px;
   display: flex;
@@ -142,7 +142,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* SCREENSHOTS TOP */
 .screenshots-top {
   padding: 24px 8vw 20px;
-  background: rgba(10, 18, 24, 0.82);
+  background: rgba(10, 18, 24, 0.72);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(2px);
 }
@@ -245,7 +245,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: rgba(10, 18, 24, 0.78);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(2px);
 }
 .hero::before {
@@ -277,7 +277,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #c5ced8;
-  background: rgba(11, 16, 20, 0.7);
+  background: rgba(10, 18, 24, 0.72);
 }
 .cta-group {
   display: flex;
@@ -332,7 +332,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(11, 16, 20, 0.8);
+  background: rgba(10, 18, 24, 0.72);
   border: 1px solid #2b3a46;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -345,7 +345,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   margin-top: 20px;
 }
 .mini-card {
-  background: rgba(11, 16, 20, 0.8);
+  background: rgba(10, 18, 24, 0.72);
   border-radius: 14px;
   border: 1px solid #1f2a33;
   padding: 10px 12px;
@@ -362,7 +362,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* GALERIE */
 .photo-gallery {
   padding: 60px 8vw;
-  background: rgba(10, 18, 24, 0.55);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(2px);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -428,7 +428,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 section {
   padding: 40px 8vw 60px;
   border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(10, 18, 24, 0.82);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(2px);
 }
 .section-title { font-size: 1.4rem; margin-bottom: 10px; }
@@ -457,7 +457,7 @@ section {
 /* FAQ */
 .faq-section {
   padding: 60px 8vw;
-  background: rgba(10, 18, 24, 0.82);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(2px);
 }
 .faq-list { max-width: 760px; margin: 32px auto 0; }
@@ -493,7 +493,7 @@ section {
 /* CONTACT */
 .contact-section {
   padding: 60px 8vw;
-  background: rgba(5, 10, 15, 0.85);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(2px);
   text-align: center;
 }
@@ -530,7 +530,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.85rem;
   color: #8b949e;
-  background: rgba(5, 8, 11, 0.85);
+  background: rgba(10, 18, 24, 0.72);
   backdrop-filter: blur(4px);
 }
 footer a { color: #c5ced8; text-decoration: none; }
