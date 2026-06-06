@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Pour qui – Orignal Scan</title>
+  <title>Contact – Orignal Scan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="data/logo.png">
   <link rel="apple-touch-icon" href="data/logo.png">
@@ -24,38 +24,24 @@
     <a href="index.html" class="nav-link">Accueil</a>
     <a href="galerie.html" class="nav-link">Galerie</a>
     <a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a>
-    <a href="pour-qui.html" class="nav-link active">Pour qui ?</a>
+    <a href="pour-qui.html" class="nav-link">Pour qui ?</a>
     <a href="telechargement.html" class="nav-link">Téléchargement</a>
     <a href="faq.html" class="nav-link">FAQ</a>
-    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
     <a href="https://www.facebook.com/profile.php?id=61588826944605" target="_blank">📘 Facebook</a>
   </nav>
 </header>
 
 <main>
-  <section style="border-top:none;">
-    <h2 class="section-title">Pour qui est Orignal Scan ?</h2>
-    <p class="section-subtitle">
-      L'application s'adresse autant aux chasseurs de la relève qu'aux chasseurs expérimentés qui désirent apprendre grâce aux algorithmes, optimiser leurs stratégies et augmenter leur succès de chasse.
-    </p>
-    <div class="features">
-      <article class="feature">
-        <h3>Chasseurs de la relève</h3>
-        <p>Orignal Scan vous permet d'évoluer rapidement en apprenant sur l'importance des vents, l'analyse des différents peuplements et autres facteurs influençant les décisions en temps de chasse.</p>
-      </article>
-      <article class="feature">
-        <h3>Chasseurs expérimentés</h3>
-        <p>Planifiez vos sorties, ciblez vos points chauds, sauvegardez vos observations et améliorez votre stratégie saison après saison.</p>
-      </article>
-      <article class="feature">
-        <h3>Groupes de chasse</h3>
-        <p>Partagez les informations clés au sein de votre groupe pour coordonner vos actions. Discutez également en temps réel avec votre groupe de chasse.</p>
-      </article>
-      <article class="feature">
-        <h3>Sépaq ou pourvoiries</h3>
-        <p>Vous payez cher pour accéder à ces territoires : ne gaspillez pas votre temps en prospection. Gardez votre énergie pour la chasse.</p>
-      </article>
-    </div>
+  <section class="contact-section">
+    <h2 class="section-title">Nous contacter</h2>
+    <p class="section-subtitle">Une question ? Une suggestion ? Écrivez-nous.</p>
+    <form class="contact-form" action="https://formspree.io/f/mqeoejkv" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre courriel" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn-primary">Envoyer</button>
+    </form>
   </section>
 </main>
 
