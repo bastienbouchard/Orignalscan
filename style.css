@@ -80,8 +80,8 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  backdrop-filter: none;
+  background: rgba(10, 18, 24, 0.50);
+  backdrop-filter: blur(2px);
   border-top: none;
 }
 .hero-parallax-content {
