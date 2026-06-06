@@ -76,29 +76,25 @@ nav a.active { color: #ffb347; font-weight: 600; }
 
 /* SCREENSHOTS TOP */
 .screenshots-top {
-  padding: 32px 8vw 28px;
+  padding: 24px 8vw 20px;
   background: #0f161b;
   border-bottom: 1px solid #1f2a33;
-  display: flex;
-  align-items: center;
-  gap: 40px;
 }
 .screenshots-label {
   display: block;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #FF6B35;
-  text-align: left;
-  line-height: 1.2;
-  flex: 0 0 auto;
-  max-width: 280px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
 }
 .screenshots-row {
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  justify-content: flex-end;
-  flex: 1;
+  justify-content: center;
+  width: 100%;
 }
 .screenshots-row .screen-thumb {
   background: none;
@@ -430,19 +426,6 @@ nav a {
 nav a:last-child { border-bottom: none; }
 
 @media (max-width: 800px) {
-  .screenshots-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .screenshots-label {
-    max-width: 100%;
-    font-size: 1.6rem;
-  }
-  .screenshots-row {
-    justify-content: center;
-    width: 100%;
-  }
   .screenshots-row .screen-thumb {
     flex: 1;
     width: auto;
