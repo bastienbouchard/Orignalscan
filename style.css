@@ -362,8 +362,9 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* GALERIE */
 .photo-gallery {
   padding: 60px 8vw;
-  background: linear-gradient(180deg, #0b1014 0%, #111821 100%);
-  border-top: 1px solid #1f2a33;
+  background: rgba(10, 18, 24, 0.55);
+  backdrop-filter: blur(2px);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .gallery-grid {
   display: grid;
@@ -443,7 +444,7 @@ section {
   gap: 20px;
 }
 .feature {
-  background: #111821;
+  background: rgba(20, 30, 40, 0.75);
   border-radius: 16px;
   border: 1px solid #1f2a33;
   padding: 18px;
