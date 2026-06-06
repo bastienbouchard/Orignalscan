@@ -565,6 +565,12 @@ nav a {
 nav a:last-child { border-bottom: none; }
 
 @media (max-width: 800px) {
+  body {
+    background-attachment: scroll;
+  }
+  .hero-parallax {
+    background-attachment: scroll;
+  }
   .screenshots-row .screen-thumb {
     flex: 1;
     width: auto;
