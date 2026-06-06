@@ -176,7 +176,8 @@ nav a.active { color: #ffb347; font-weight: 600; }
 .screenshots-row .screen-thumb img {
   width: 160px;
   border-radius: 12px;
-  border: 2px solid #1f2a33;
+  border: 2px solid rgba(255, 179, 71, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .screenshots-row .screen-thumb:hover img {
@@ -376,8 +377,13 @@ nav a.active { color: #ffb347; font-weight: 600; }
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  border: 1px solid #1f2a33;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid rgba(255, 179, 71, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.gallery-item:hover {
+  border-color: #ffb347;
+  box-shadow: 0 8px 30px rgba(255, 179, 71, 0.25);
 }
 .gallery-item img {
   width: 100%;
