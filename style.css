@@ -82,12 +82,13 @@ nav a.active { color: #ffb347; font-weight: 600; }
 }
 .screenshots-label {
   display: block;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   color: #f5f5f5;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   width: 100%;
+  line-height: 1.2;
 }
 .screenshots-row {
   display: flex;
