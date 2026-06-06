@@ -12,7 +12,7 @@ a { text-decoration: none; }
 
 /* HERO PARALLAX */
 .hero-parallax {
-  min-height: 90vh;
+  min-height: 70vh;
   background-image: url('data/hero-forest.jpg');
   background-attachment: fixed;
   background-size: cover;
