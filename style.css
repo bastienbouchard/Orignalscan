@@ -114,13 +114,15 @@ a { text-decoration: none; }
   margin-bottom: 22px;
 }
 .hero-parallax-content h1 {
-  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-size: clamp(1.9rem, 4vw, 3.8rem);
   font-weight: 900;
   color: #fff;
-  line-height: 1.08;
+  line-height: 1.12;
   margin-bottom: 22px;
   text-shadow: 0 2px 32px rgba(0,0,0,0.55);
   letter-spacing: -0.01em;
+  hyphens: none;
+  word-break: keep-all;
 }
 .hero-accent {
   color: #ffb347;
