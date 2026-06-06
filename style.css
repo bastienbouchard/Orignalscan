@@ -426,8 +426,9 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* SECTIONS */
 section {
   padding: 40px 8vw 60px;
-  border-top: 1px solid #1f2a33;
-  background: #0b1014;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10, 18, 24, 0.82);
+  backdrop-filter: blur(2px);
 }
 .section-title { font-size: 1.4rem; margin-bottom: 10px; }
 .section-subtitle {
