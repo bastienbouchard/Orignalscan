@@ -1,7 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0b1014;
+  background-image: url('data/hero-forest.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-color: #0b1014;
   color: #f5f5f5;
 }
 a { text-decoration: none; }
@@ -68,12 +72,13 @@ a { text-decoration: none; }
 
 /* HEADER */
 header {
-  background: linear-gradient(135deg, #1b2833, #243b4a);
+  background: rgba(10, 18, 24, 0.85);
+  backdrop-filter: blur(8px);
   padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #1f2a33;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   position: relative;
   z-index: 10;
 }
@@ -137,8 +142,9 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* SCREENSHOTS TOP */
 .screenshots-top {
   padding: 24px 8vw 20px;
-  background: #0f161b;
-  border-bottom: 1px solid #1f2a33;
+  background: rgba(10, 18, 24, 0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(2px);
 }
 .screenshots-label {
   display: block;
@@ -239,17 +245,11 @@ nav a.active { color: #ffb347; font-weight: 600; }
   align-items: center;
   position: relative;
   overflow: hidden;
+  background: rgba(10, 18, 24, 0.78);
+  backdrop-filter: blur(2px);
 }
 .hero::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('data/forest-with-trees-close-up.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.08;
-  z-index: 0;
-  pointer-events: none;
+  display: none;
 }
 .hero-text, .hero-visual { position: relative; z-index: 1; }
 .hero-text h1 {
@@ -455,10 +455,11 @@ section {
 /* FOOTER */
 footer {
   padding: 20px 8vw 30px;
-  border-top: 1px solid #1f2a33;
+  border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.85rem;
   color: #8b949e;
-  background: #05080b;
+  background: rgba(5, 8, 11, 0.85);
+  backdrop-filter: blur(4px);
 }
 footer a { color: #c5ced8; text-decoration: none; }
 footer a:hover { color: #ffb347; }
