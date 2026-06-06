@@ -29,33 +29,36 @@ body {
 .store-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 13px;
-  border-radius: 8px;
+  gap: 9px;
+  padding: 6px 18px;
+  border-radius: 10px;
   text-decoration: none;
   color: #fff;
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 700;
   line-height: 1.2;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.09);
   transition: all 0.2s;
+  letter-spacing: 0.01em;
 }
 .store-btn small {
   display: block;
-  font-size: 0.62rem;
+  font-size: 0.60rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 .store-btn:hover {
-  background: rgba(255, 179, 71, 0.14);
-  border-color: rgba(255, 179, 71, 0.55);
+  background: rgba(255, 179, 71, 0.18);
+  border-color: rgba(255, 179, 71, 0.6);
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 179, 71, 0.15);
 }
 .store-btn svg { flex-shrink: 0; }
 .store-android svg { color: #34e06a; }
-.store-ios svg { color: #c8c8c8; }
+.store-ios svg { color: #d0d0d0; }
 @media (max-width: 600px) {
   .top-bar-text { display: none; }
   .store-btn { padding: 5px 10px; }
