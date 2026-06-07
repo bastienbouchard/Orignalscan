@@ -127,8 +127,10 @@ a { text-decoration: none; }
   white-space: pre-line;
 }
 @media (max-width: 768px) {
-  .hero-parallax-content h1 { font-size: 1.5rem; }
-  .hero-parallax-content { padding: 40px 4vw; }
+  .hero-parallax { min-height: 0; }
+  .hero-parallax-content { padding: 22px 5vw; }
+  .hero-parallax-content h1 { font-size: 1.5rem; margin-bottom: 14px; }
+  .hero-cta { margin-top: 0; }
 }
 @media (min-width: 769px) {
   .logo img { height: 58px; }
