@@ -83,12 +83,7 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 18, 24, 0.72) 0%,
-    rgba(10, 18, 24, 0.38) 50%,
-    rgba(10, 18, 24, 0.72) 100%
-  );
+  background: rgba(10, 18, 24, 0.50);
   border-top: none;
 }
 @keyframes fadeUp {
