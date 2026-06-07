@@ -82,7 +82,7 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   border-top: none;
 }
 @keyframes fadeUp {
@@ -257,7 +257,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* SCREENSHOTS TOP */
 .screenshots-top {
   padding: 10px 8vw 20px;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   border-top: none;
 }
 .screenshots-label {
@@ -360,7 +360,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   
 }
 .hero::before {
@@ -392,7 +392,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #c5ced8;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
 }
 .cta-group {
   display: flex;
@@ -447,7 +447,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 999px;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   border: 1px solid #2b3a46;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -460,7 +460,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   margin-top: 20px;
 }
 .mini-card {
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   border-radius: 14px;
   border: 1px solid #1f2a33;
   padding: 10px 12px;
@@ -477,7 +477,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 /* GALERIE */
 .photo-gallery {
   padding: 60px 8vw;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   
   border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -548,7 +548,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 section {
   padding: 40px 8vw 60px;
   border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   
 }
 .section-title { font-size: 1.4rem; margin-bottom: 10px; }
@@ -577,7 +577,7 @@ section {
 /* FAQ */
 .faq-section {
   padding: 60px 8vw;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   
 }
 .faq-list { max-width: 760px; margin: 32px auto 0; }
@@ -613,7 +613,7 @@ section {
 /* CONTACT */
 .contact-section {
   padding: 60px 8vw;
-  background: rgba(10, 18, 24, 0.50);
+  background: transparent;
   
   text-align: center;
 }
