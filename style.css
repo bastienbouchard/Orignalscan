@@ -102,6 +102,14 @@ a { text-decoration: none; }
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes heroEntry {
+  0%   { opacity: 0; transform: translateY(55px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
 .hero-parallax-content {
   position: relative;
   z-index: 1;
@@ -137,6 +145,8 @@ a { text-decoration: none; }
   hyphens: none;
   text-align: center;
   white-space: pre-line;
+  animation: heroEntry 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both,
+             heroFloat 5s ease-in-out 1.4s infinite;
 }
 @media (max-width: 768px) {
   .hero-parallax { min-height: 0; }
