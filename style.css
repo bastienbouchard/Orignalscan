@@ -74,8 +74,9 @@ body::before {
 }
 @media (max-width: 768px) and (orientation: portrait) {
   body::before {
+    background-image: url('data/hero-portrait.jpg');
     background-size: cover;
-    background-position: 8% center;
+    background-position: center top;
   }
 }
 body::after {
