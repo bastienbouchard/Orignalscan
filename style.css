@@ -74,8 +74,8 @@ body::before {
 }
 @media (max-width: 768px) and (orientation: portrait) {
   body::before {
-    background-size: auto 135%;
-    background-position: 5% 60%;
+    background-size: auto 110%;
+    background-position: 8% 78%;
   }
 }
 body::after {
