@@ -7,7 +7,7 @@
   <meta name="description" content="Orignal Scan est une application conçue pour les chasseurs d'orignaux : cartes, observations, notes et planification.">
   <link rel="icon" type="image/png" href="data/logo-dark.png">
   <link rel="apple-touch-icon" href="data/logo-dark.png">
-  <link rel="stylesheet" href="style.css?v=65">
+  <link rel="stylesheet" href="style.css?v=66">
 </head>
 <body>
 <header>
@@ -72,6 +72,7 @@
   <div class="modal-overlay" id="modal" onclick="closeModal()">
     <div class="modal-box" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modal-img" src="" alt="" style="width:100%; border-radius:10px; margin-bottom:14px; display:none;">
       <h3 id="modal-title"></h3>
       <p id="modal-desc"></p>
     </div>
@@ -96,24 +97,30 @@
 
   const modals = {
     affut: {
-      title: '🏕 Postes d\'affût',
+      title: '🏕 Cache',
+      img: 'data/screenshot-affut.jpg',
       desc: 'L\'algorithme de Orignal Scan analyse les données écoforestières et du terrain afin de dénicher les meilleurs endroits pour y installer un poste d\'affût. Maximisez vos chances d\'observation sans perdre de temps en prospection.'
     },
     hotspots: {
       title: '🔥 Zone active',
+      img: 'data/screenshot-hotspots.jpg',
       desc: 'Grâce à l\'algorithme de Orignal Scan, vous pouvez déterminer les emplacements les plus favorables à la présence d\'orignaux sur votre territoire. Les zones sont calculées à partir des données écoforestières officielles du MRNF.'
     },
     salines: {
-      title: '🧂 Salines',
+      title: '🧂 Saline',
+      img: 'data/screenshot-salines.jpg',
       desc: 'L\'algorithme de Orignal Scan identifie les zones propices à l\'installation de salines grâce à l\'analyse combinée du terrain et des données écoforestières. Positionnez vos salines là où l\'orignal est le plus susceptible de passer.'
     },
     parcours: {
-      title: '🗺 Parcours optimisé',
+      title: '🗺 Parcours',
+      img: 'data/screenshot-parcours.jpg',
       desc: 'Créez des parcours intelligents à l\'aide de l\'algorithme de Orignal Scan qui optimise vos déplacements selon différents critères afin de rentrer dans le meilleur habitat pour l\'orignal en temps de chasse.'
     }
   };
 
   function openModal(key) {
+    const imgEl = document.getElementById("modal-img");
+    if (modals[key].img) { imgEl.src = modals[key].img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
     document.getElementById('modal-title').textContent = modals[key].title;
     document.getElementById('modal-desc').textContent = modals[key].desc;
     document.getElementById('modal').classList.add('open');

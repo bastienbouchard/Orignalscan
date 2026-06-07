@@ -316,12 +316,13 @@ nav a.active { color: #ffb347; font-weight: 600; }
   border-radius: 12px;
   border: 2px solid rgba(255, 179, 71, 0.5);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  display: block;
 }
 .screenshots-row .screen-thumb:hover img {
   border-color: #ffb347;
-  box-shadow: 0 4px 16px rgba(255, 179, 71, 0.3);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(255, 179, 71, 0.4);
+  transform: scale(1.13);
 }
 .screenshots-row .screen-thumb span {
   font-size: 0.85rem;
