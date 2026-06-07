@@ -157,6 +157,7 @@ a { text-decoration: none; }
 }
 @media (min-width: 769px) {
   .logo img { height: 58px; }
+  .logo-img img { height: 104px; }
   .hero-parallax { min-height: 28vh; }
   .hero-parallax-content { padding: 20px 8vw 12px; }
 }
