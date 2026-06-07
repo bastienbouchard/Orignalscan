@@ -658,7 +658,6 @@ footer {
   color: #fff;
   background: transparent;
   text-align: center;
-  white-space: nowrap;
 }
 footer a { color: #c5ced8; text-decoration: none; }
 footer a:hover { color: #ffb347; }
