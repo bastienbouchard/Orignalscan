@@ -94,7 +94,7 @@ a { text-decoration: none; }
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 60px 8vw;
+  padding: 30px 8vw 16px;
   width: 100%;
   max-width: 820px;
   margin-left: auto;
@@ -128,14 +128,14 @@ a { text-decoration: none; }
 }
 @media (max-width: 768px) {
   .hero-parallax { min-height: 0; }
-  .hero-parallax-content { padding: 22px 5vw; }
-  .hero-parallax-content h1 { font-size: 1.5rem; margin-bottom: 14px; }
+  .hero-parallax-content { padding: 14px 5vw 8px; }
+  .hero-parallax-content h1 { font-size: 1.5rem; margin-bottom: 12px; }
   .hero-cta { margin-top: 0; }
 }
 @media (min-width: 769px) {
   .logo img { height: 58px; }
-  .hero-parallax { min-height: 36vh; }
-  .hero-parallax-content { padding: 28px 8vw; }
+  .hero-parallax { min-height: 28vh; }
+  .hero-parallax-content { padding: 20px 8vw 12px; }
 }
 .hero-accent {
   color: #ffb347;
@@ -257,7 +257,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 
 /* SCREENSHOTS TOP */
 .screenshots-top {
-  padding: 24px 8vw 20px;
+  padding: 10px 8vw 20px;
   background: rgba(10, 18, 24, 0.50);
   border-top: none;
   border-bottom: 1px solid rgba(255,255,255,0.08);
