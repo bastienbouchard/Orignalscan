@@ -78,7 +78,7 @@ a { text-decoration: none; }
 
 /* HERO PARALLAX */
 .hero-parallax {
-  min-height: 85vh;
+  min-height: 55vh;
   position: relative;
   display: flex;
   align-items: center;
