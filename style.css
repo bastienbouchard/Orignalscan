@@ -740,3 +740,36 @@ nav a:last-child { border-bottom: none; }
   .gallery-item img { min-height: 180px; }
   .card-grid { grid-template-columns: 1fr; }
 }
+
+/* BLOG */
+.blog-article {
+  margin-bottom: 60px;
+  color: #d0d7de;
+  line-height: 1.8;
+}
+.blog-meta {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffb347;
+  margin-bottom: 10px;
+}
+.blog-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+.blog-article h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffb347;
+  margin: 28px 0 10px;
+}
+.blog-article p { margin-bottom: 14px; }
+.blog-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 0 0 50px;
+}
