@@ -157,7 +157,6 @@ a { text-decoration: none; }
 }
 @media (min-width: 769px) {
   .logo img { height: 58px; }
-  .logo-img img { height: 104px; }
   .hero-parallax { min-height: 28vh; }
   .hero-parallax-content { padding: 20px 8vw 12px; }
 }
@@ -229,6 +228,7 @@ header {
   flex-shrink: 0;
 }
 .logo-img img { height: 52px; width: auto; }
+@media (min-width: 769px) { .logo-img img { height: 104px; } }
 .header-brand {
   position: absolute;
   left: 50%;
