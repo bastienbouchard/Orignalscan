@@ -652,7 +652,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.85rem;
   color: #8b949e;
-  background: #0b1014;
+  background: transparent;
   text-align: center;
   white-space: nowrap;
 }
