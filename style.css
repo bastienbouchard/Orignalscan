@@ -259,8 +259,6 @@ nav a.active { color: #ffb347; font-weight: 600; }
   padding: 10px 8vw 20px;
   background: rgba(10, 18, 24, 0.50);
   border-top: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  
 }
 .screenshots-label {
   display: block;
@@ -649,7 +647,6 @@ section {
 /* FOOTER */
 footer {
   padding: 20px 0 30px;
-  border-top: 1px solid rgba(255,255,255,0.08);
   font-size: 0.85rem;
   color: #fff;
   background: transparent;
