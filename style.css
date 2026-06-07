@@ -186,8 +186,8 @@ a { text-decoration: none; }
 
 /* HEADER */
 header {
-  background: rgba(10, 18, 24, 0.50);
-  backdrop-filter: blur(8px);
+  background: rgba(10, 18, 24, 0.20);
+  backdrop-filter: blur(4px);
   padding: 16px 20px;
   display: flex;
   align-items: center;
