@@ -131,8 +131,9 @@ a { text-decoration: none; }
   text-align: center;
   white-space: pre-line;
 }
-@media (max-width: 500px) {
-  .hero-parallax-content h1 { font-size: 1.8rem; }
+@media (max-width: 768px) {
+  .hero-parallax-content h1 { font-size: 1.5rem; }
+  .hero-parallax-content { padding: 40px 4vw; }
 }
 .hero-accent {
   color: #ffb347;
