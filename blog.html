@@ -7,7 +7,7 @@
   <meta name="description" content="Conseils et stratégies pour chasseurs d'orignaux – comment tirer le maximum d'Orignal Scan sur le terrain.">
   <link rel="icon" type="image/png" href="data/logo-dark.png">
   <link rel="apple-touch-icon" href="data/logo-dark.png">
-  <link rel="stylesheet" href="style.css?v=72">
+  <link rel="stylesheet" href="style.css?v=73">
 </head>
 <body>
 <header>
@@ -40,19 +40,22 @@
     <p class="section-subtitle">Stratégies et conseils pour maximiser votre succès de chasse à l'orignal.</p>
 
     <!-- Menu des articles -->
-    <div class="blog-index">
-      <a href="#article-1" class="blog-card">
+    <div class="blog-index" id="blog-index">
+      <button class="blog-card" onclick="showArticle('article-1')">
         <div class="blog-card-meta">Stratégie &nbsp;·&nbsp; Chasse fine</div>
         <div class="blog-card-title">Le chasseur de chasse fine : comment Orignal Scan change la donne</div>
-      </a>
-      <a href="#article-2" class="blog-card">
+      </button>
+      <button class="blog-card" onclick="showArticle('article-2')">
         <div class="blog-card-meta">Stratégie &nbsp;·&nbsp; Poste d'affût</div>
         <div class="blog-card-title">Trouver le cache parfait : la méthode Orignal Scan</div>
-      </a>
+      </button>
     </div>
 
+    <!-- Bouton retour -->
+    <button class="blog-back" id="blog-back" onclick="showIndex()" style="display:none;">← Retour aux articles</button>
+
     <!-- Article 1 -->
-    <article class="blog-article" id="article-1">
+    <article class="blog-article" id="article-1" style="display:none;">
       <div class="blog-meta">Stratégie &nbsp;·&nbsp; Chasse fine</div>
       <h2 class="blog-title">Le chasseur de chasse fine : comment Orignal Scan change la donne</h2>
 
@@ -71,10 +74,8 @@
       <p>Un bon chasseur de chasse fine tient un journal de terrain. Orignal Scan vous permet de sauvegarder vos observations directement sur la carte : pistes, frottis, bouses, passages. Ces données s'accumulent d'une saison à l'autre et construisent une image précise du comportement de l'orignal sur votre territoire. C'est cette profondeur d'analyse qui fait la différence entre un chasseur et un stratège.</p>
     </article>
 
-    <div class="blog-divider"></div>
-
     <!-- Article 2 -->
-    <article class="blog-article" id="article-2">
+    <article class="blog-article" id="article-2" style="display:none;">
       <div class="blog-meta">Stratégie &nbsp;·&nbsp; Poste d'affût</div>
       <h2 class="blog-title">Trouver le cache parfait : la méthode Orignal Scan</h2>
 
@@ -113,6 +114,21 @@
   const nav = document.getElementById('nav');
   hamburger.addEventListener('click', () => nav.classList.toggle('open'));
   document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => nav.classList.remove('open')));
+
+  function showArticle(id) {
+    document.getElementById('blog-index').style.display = 'none';
+    document.getElementById('blog-back').style.display = 'inline-flex';
+    document.querySelectorAll('.blog-article').forEach(a => a.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showIndex() {
+    document.getElementById('blog-index').style.display = 'grid';
+    document.getElementById('blog-back').style.display = 'none';
+    document.querySelectorAll('.blog-article').forEach(a => a.style.display = 'none');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 </script>
 </body>
 </html>
