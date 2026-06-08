@@ -448,7 +448,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
 .btn-primary, .btn-secondary {
   border-radius: 999px;
   padding: 10px 22px;
-  font-size: 0.95rem;
+  font-size: clamp(0.72rem, 3.5vw, 0.95rem);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -456,6 +456,7 @@ nav a.active { color: #ffb347; font-weight: 600; }
   align-items: center;
   gap: 8px;
   transition: all 0.3s;
+  white-space: nowrap;
 }
 .btn-primary {
   background: #ffb347;
