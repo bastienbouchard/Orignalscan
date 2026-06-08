@@ -742,6 +742,41 @@ nav a:last-child { border-bottom: none; }
   .card-grid { grid-template-columns: 1fr; }
 }
 
+/* BLOG INDEX */
+.blog-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 50px;
+}
+.blog-card {
+  display: block;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,179,71,0.25);
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.blog-card:hover {
+  background: rgba(255,179,71,0.1);
+  border-color: #ffb347;
+  transform: translateY(-3px);
+}
+.blog-card-meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #ffb347;
+  margin-bottom: 8px;
+}
+.blog-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
 /* BLOG */
 .blog-article {
   margin-bottom: 60px;
