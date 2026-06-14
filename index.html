@@ -10,10 +10,6 @@
   <link rel="stylesheet" href="style.css?v=74">
 </head>
 <body>
-<div id="intro-screen">
-  <img id="intro-logo" src="data/logo.png" alt="">
-</div>
-<div id="intro-overlay-fade"></div>
 <header>
   <a href="index.html" class="logo-img">
     <img src="data/logo.png" alt="Logo Orignal Scan">
@@ -97,12 +93,7 @@
 </footer>
 
 <script>
-  // Intro plongeon dans la cible
-  const intro = document.getElementById('intro-screen');
-  const fade  = document.getElementById('intro-overlay-fade');
-  setTimeout(() => { intro.classList.add('done'); fade.remove(); }, 2700);
-
-  document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year').textContent = new Date().getFullYear();
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
   hamburger.addEventListener('click', () => nav.classList.toggle('open'));

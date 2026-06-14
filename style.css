@@ -5,48 +5,6 @@ body {
   color: #f5f5f5;
 }
 
-/* ── INTRO PLONGEON ────────────────────────────────────────────────────── */
-#intro-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: #0b1014;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-#intro-screen.done { display: none; }
-
-#intro-logo {
-  width: min(54vw, 260px);
-  transform-origin: center center;
-  animation: introDive 2.6s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-}
-
-@keyframes introDive {
-  0%   { opacity: 0;   transform: scale(0.6); }
-  18%  { opacity: 1;   transform: scale(1); }
-  55%  { opacity: 1;   transform: scale(1.05); }
-  100% { opacity: 0;   transform: scale(18); }
-}
-
-#intro-overlay-fade {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  background: #0b1014;
-  opacity: 0;
-  animation: introFadeBg 2.6s cubic-bezier(0.4, 0, 0.6, 1) forwards;
-  pointer-events: none;
-}
-
-@keyframes introFadeBg {
-  0%   { opacity: 1; }
-  50%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 /* TOP BAR */
 .top-bar {
   position: fixed;
