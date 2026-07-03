@@ -28,39 +28,47 @@ body {
 .store-btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 6px 18px;
-  border-radius: 10px;
+  gap: 14px;
+  padding: 14px 28px;
+  border-radius: 16px;
   text-decoration: none;
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.09);
-  transition: all 0.2s;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  transition: all 0.25s;
   letter-spacing: 0.01em;
+  min-width: 200px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 .store-btn small {
   display: block;
-  font-size: 0.60rem;
+  font-size: 0.65rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.store-btn:hover {
-  background: rgba(255, 179, 71, 0.18);
-  border-color: rgba(255, 179, 71, 0.6);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 179, 71, 0.15);
+.store-btn span { text-align: left; }
+.store-ios {
+  border-color: rgba(255, 179, 71, 0.5);
+  background: linear-gradient(135deg, #1e1600 0%, #2d2000 100%);
+  box-shadow: 0 4px 24px rgba(255, 179, 71, 0.2);
 }
-.store-btn svg { flex-shrink: 0; }
+.store-ios:hover {
+  background: linear-gradient(135deg, #2d2000 0%, #3d2c00 100%);
+  border-color: rgba(255, 179, 71, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(255, 179, 71, 0.35);
+}
+.store-btn svg { flex-shrink: 0; width: 32px; height: 32px; }
 .store-android svg { color: #34e06a; }
-.store-ios svg { color: #d0d0d0; }
+.store-ios svg { color: #ffb347; }
 @media (max-width: 600px) {
   .top-bar-text { display: none; }
-  .store-btn { padding: 5px 10px; }
+  .store-btn { padding: 12px 20px; min-width: 160px; font-size: 0.9rem; }
 }
 body::before {
   content: '';
